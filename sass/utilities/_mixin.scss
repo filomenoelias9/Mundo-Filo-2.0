@@ -1,0 +1,59 @@
+//variables
+@use "../utilities/variables" as *;
+
+// Transición reutilizable
+@mixin transition-base {
+  transition: $transicion-base;
+}
+
+// Card de productos
+@mixin card-base {
+  background-color: $color-card-bg;
+  border: 0.2rem solid $color-card-borde;
+  border-radius: 20px;
+  color: $color-texto-claro;
+  padding: 0.5rem;
+  width: 90%;
+  max-width: 250px;
+  margin: 0 auto 1.5rem auto;
+}
+
+// Grid adaptable
+@mixin grid-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // fijo porque no querés parámetros
+  gap: 2rem;
+  justify-items: center;
+}
+
+//hover redes
+@mixin hover-redes {
+    a {
+      img:hover {
+        animation: shake 1s ease;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(-3px);
+        }
+
+        50% {
+          transform: translateX(3px);
+        }
+
+        75% {
+          transform: translateX(-3px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+    }
+  }

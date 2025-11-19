@@ -1,0 +1,31 @@
+//variables
+@use "../utilities/variables" as *;
+//mixin
+@use "../utilities/mixin" as *;
+
+@media (min-width: 1024px) {
+
+    /* Header: vuelve a usar flex para alinear logo y menú */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+
+        img {
+            max-width: 200px;
+            /* un poco más grande que en mobile */
+        }
+    }
+
+    /* Productos: 4 artículos por fila */
+    .productos {
+        .destacados {
+            @include grid-cols;
+        }
+    }
+
+    footer {
+        text-align: center;
+    }
+}

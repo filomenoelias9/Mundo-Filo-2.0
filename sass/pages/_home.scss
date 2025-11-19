@@ -1,0 +1,127 @@
+//variables
+@use "../utilities/variables" as *;
+//mixin
+@use "../utilities/mixin" as *;
+
+/* Estilos de header */
+
+header {
+    background-color: $color-primario;
+    width: 100%;
+
+    a {
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+.navbar{
+    .bg-mundofilo{
+        background-color: $color-primario;
+    }
+
+    .bg-mundofilo,
+    .navbar-brand,
+    .bg-mundofilo .nav-link,
+    .dropdow-item{
+        color: $color-texto-claro;
+    }
+
+    .bg-mundofilo{
+        .dropdow-menu{
+            background-color: $color-primario;
+            border: none;
+        }
+    }
+    .nav-link:hover{
+        background-color: $color-secundario;
+        color: $color-texto-claro;
+        transition: $transicion-base;
+    }
+}
+
+.dropdow-menu{
+    .dropdow-item:hover{
+        background-color: $color-secundario;
+        color: $color-texto-claro;
+        transition: $transicion-base;
+    }
+}
+
+/* Estilos de main */
+
+main{
+    text-align: center;
+    h1, h2, h3, h4{
+        color: $color-secundario;
+    }
+    ul{
+        li{
+            list-style: none
+        };
+    }
+}
+
+/* Estilos section */
+
+section{
+    a{
+        text-decoration: none;
+        color: $color-secundario;
+    }
+    h2, h3{
+        color: $color-secundario;
+    }
+}
+
+.productos{
+    .destacados{
+        padding: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 2rem;
+        article{
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        article:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: $color-secundario;
+        }
+    }
+}
+
+.mas{
+    text-align: center;
+}
+
+section{
+    article{
+        @include card-base;
+    }
+}
+
+/* estilos footer */
+footer{
+    ul{
+        li{
+            list-style: none;
+        }
+    }
+    .redes{
+        background-color: $color-primario;
+        text-align: center;
+        color: $color-texto-claro;
+        @include hover-redes;
+    }
+    h3{
+        color: $color-secundario;
+    }
+}
